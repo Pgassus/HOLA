@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Ti, Mi Amor 💌</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(145deg, #fbeff8, #fff0f5);
+      font-family: 'Georgia', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      perspective: 1200px;
+    }
+
+    .envelope {
+      width: 260px;
+      height: 160px;
+      background: linear-gradient(to bottom, #d63384, #c2185b);
+      border-radius: 12px;
+      position: relative;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.5s ease;
+      margin: 0 auto;
+    }
+
+    .envelope:hover {
+      transform: rotateY(10deg) rotateX(8deg) scale(1.05);
+    }
+
+    .flap {
+      width: 0;
+      height: 0;
+      border-left: 130px solid transparent;
+      border-right: 130px solid transparent;
+      border-bottom: 80px solid #f06292;
+      position: absolute;
+      top: -80px;
+      left: 0;
+    }
+
+    .message {
+      display: none;
+      margin-top: 40px;
+      padding: 30px;
+      background: white;
+      border-radius: 16px;
+      max-width: 500px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 1.2s ease-in-out;
+      margin: 0 auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .message img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .message p {
+      font-size: 18px;
+      color: #4a0033;
+      line-height: 1.6;
+    }
+
+    .heart {
+      font-size: 48px;
+      color: #ff1493;
+      animation: pulse 1s infinite;
+      margin-top: 15px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    h2 {
+      color: #b30059;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    iframe {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="envelope" onclick="mostrarCarta()">
+    <div class="flap"></div>
+  </div>
+  <h2>Haz clic en el sobre para abrir la carta 💌</h2>
+
+  <div class="message" id="mensaje">
+    <img src=" C:\Users\rodri\OneDrive\Escritorio\jull2.jpg" alt="Nosotros" />
+    <p>Mi amor,</p>
+    <p>Cada día contigo es un regalo que la vida me da. Tus abrazos, tus sonrisas y tu cariño son lo que me da fuerza y alegría.</p>
+    <p>No necesito más que a ti para ser feliz. Eres mi todo. Te amo con todo mi corazón ❤️</p>
+    <div class="heart">💖</div>
+  </div>
+</div>
+
+<!-- Reproductor de YouTube oculto para música de fondo -->
+<iframe id="musica" width="0" height="0" src="https://www.youtube.com/embed/vwoY06EyGto?autoplay=1&loop=1&playlist=vwoY06EyGto" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+
+<script>
+  function mostrarCarta() {
+    document.getElementById('mensaje').style.display = 'block';
+    document.getElementById('musica').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
